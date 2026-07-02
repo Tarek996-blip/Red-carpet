@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> — سجاد ومفروشات فاخرةريد كاربت</title>
+<meta name="description" content="متجر دار السجاد لبيع أفخم أنواع السجاد الكلاسيكي والمودرن والموكيت بأسعار مناسبة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">ريد كاربت  </div>
+    <nav class="nav-links">
+      <a href="#products">المنتجات</a>
+      <a href="#sizes">المقاسات</a>
+      <a href="#gallery">المعرض</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+      <a href="/admin">لوحة التحكم</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+       <h1>لكل <em>سجادة</em> حكاية<br>والحكاية تبدأ من <em>ريد كاربت</em></h1>
+      <p>نوفر أفخم أنواع السجاد الكلاسيكي والمودرن والموكيت، بخامات مختارة بعنايه فائقة  تناسب كل الأذواق والمساحات.</p>
+      <div class="hero-actions">
+        <a href="#sizes" class="btn btn-primary">اختر مقاسك</a>
+        <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      
+  <img src="/images/prand.png" alt="RED CARPET">
+
+    </div>
+  </div>
+</section>
+
+<!-- سكشن المقاسات -->
+<section class="section sizes-section" id="sizes">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>ابدأ من مقاسك</h2>
+        <p>اختر المقاس المناسب لمساحتك وهنوريلك التشكيلة المتاحة</p>
+      </div>
+    </div>
+    <div class="sizes-grid" id="sizesGrid">
+      <!-- بيتبني تلقائياً من المنتجات -->
+    </div>
+  </div>
+</section>
+
+<!-- سكشن المنتجات (بيظهر بعد اختيار مقاس) -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="productsTitle">منتجاتنا</h2>
+        <p id="productsSubtitle">اختر من بين تشكيلتنا الواسعة</p>
+      </div>
+      <button class="btn btn-outline" id="clearSizeBtn" style="display:none">← كل المقاسات</button>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter-chip active" data-cat="">الكل</button>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+      </div>
+    </div>
+
+    <!-- فلتر السعر -->
+    <div class="price-filter" id="priceFilter" style="display:none">
+      <div class="price-filter-inner">
+        <span class="price-filter-label">الفئة السعرية:</span>
+        <div class="price-inputs">
+          <input type="number" id="priceMin" placeholder="من" min="0">
+          <span class="price-sep">—</span>
+          <input type="number" id="priceMax" placeholder="إلى" min="0">
+          <span class="price-unit">جنيه</span>
+        </div>
+        <button class="btn btn-primary price-filter-apply" id="applyPrice">تطبيق</button>
+        <button class="btn btn-outline price-filter-reset" id="resetPrice">مسح</button>
+      </div>
+    </div>
+
+    <div class="grid" id="productGrid">
+      <p class="empty">جارٍ تحميل المنتجات...</p>
+    </div>
+  </div>
+</section>
+
+<!-- سكشن الجاليري -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>معرض صورنا</h2>
+        <p>تشكيلتنا الكاملة في مكان واحد</p>
+      </div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <p class="empty">جارٍ تحميل الصور...</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>من نحن</h2>
+        <p>خبرة سنوات في عالم السجاد والمفروشات</p>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-item">
+        <h4>جودة مضمونة</h4>
+        <p>نختار خاماتنا بعناية فائقة لضمان متانة ولمسة فاخرة تدوم طويلاً.</p>
+      </div>
+      <div class="about-item">
+        <h4>تشكيلة متنوعة</h4>
+        <p>من السجاد  الكلاسيكي إلى التصاميم المودرن والموكيت العملي.</p>
+      </div>
+      <div class="about-item">
+        <h4>خدمة شخصية</h4>
+        <p>فريقنا جاهز لمساعدتك في اختيار القطعة المناسبة لمساحتك وذوقك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>تواصل معنا</h2>
+        <p>للاستفسار أو الطلب راسلنا مباشرة</p>
+      </div>
+    </div>
+    <div class="contact-row">
+      <a class="btn btn-primary" href="https://wa.me/01064408070" target="_blank" rel="noopener">واتساب: 01064408070+</a>
+      <a class="btn btn-outline" href="tel:+201064408070">اتصل بنا</a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> ريد كاربت — جميع الحقوق محفوظة</footer>
+
+<!-- Modal المنتج -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-info">
+      <span class="card-cat" id="modalCat"></span>
+      <h3 id="modalName"></h3>
+      <div class="modal-price" id="modalPrice"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <!-- مقاسات المنتج -->
+      <div id="modalSizesWrap" style="margin-bottom:16px;display:none">
+        <div style="font-size:13px;font-weight:700;margin-bottom:8px;">المقاسات المتاحة:</div>
+        <div id="modalSizes" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      </div>
+      <div class="contact-row">
+        <a class="btn btn-primary" id="modalWhatsapp" href="#" target="_blank" rel="noopener">اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

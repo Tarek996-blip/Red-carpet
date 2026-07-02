@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم — ريد كاربت</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-shell">
+
+<div id="loginView">
+  <div class="login-box">
+    <h2>دخول لوحة التحكم</h2>
+    <div class="error-msg" id="loginError"></div>
+    <div class="field">
+      <label>اسم المستخدم</label>
+      <input type="text" id="loginUsername" autocomplete="username">
+    </div>
+    <div class="field">
+      <label>كلمة السر</label>
+      <input type="password" id="loginPassword" autocomplete="current-password">
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" id="loginBtn">دخول</button>
+  </div>
+</div>
+
+<div id="dashboardView" style="display:none">
+  <header class="admin-header">
+    <div class="container">
+      <div class="brand" style="color:#fff">ريد كاربت — لوحة التحكم</div>
+      <div style="display:flex;gap:14px;align-items:center">
+        <a href="/" target="_blank" style="color:#fff;font-size:14px">عرض الموقع</a>
+        <button class="btn btn-outline" style="border-color:#fff;color:#fff" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- تبويبات -->
+  <div style="background:#fff;border-bottom:1px solid var(--color-line);">
+    <div class="container" style="display:flex;gap:0;">
+      <button class="admin-tab active" data-tab="products">المنتجات</button>
+      <button class="admin-tab" data-tab="gallery">المعرض</button>
+    </div>
+  </div>
+
+  <main class="admin-main">
+    <div class="success-msg" id="successMsg"></div>
+
+    <!-- قسم المنتجات -->
+    <div id="tab-products">
+      <div class="admin-toolbar">
+        <h2 style="font-family:var(--font-display);font-size:28px;margin:0">المنتجات</h2>
+        <button class="btn btn-primary" id="addProductBtn">+ إضافة منتج جديد</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>صورة</th><th>الاسم</th><th>الفئة</th><th>السعر</th><th>الحالة</th><th>إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- قسم الجاليري -->
+    <div id="tab-gallery" style="display:none">
+      <div class="admin-toolbar">
+        <h2 style="font-family:var(--font-display);font-size:28px;margin:0">المعرض</h2>
+        <label class="btn btn-primary" style="cursor:pointer">
+          + رفع صورة جديدة
+          <input type="file" id="galleryUploadInput" accept="image/*" multiple style="display:none">
+        </label>
+      </div>
+      <div id="galleryAdminGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;">
+        <p class="empty">لا توجد صور بعد</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="modal-form-backdrop" id="formBackdrop">
+  <form class="modal-form" id="productForm">
+    <h3 id="formTitle">إضافة منتج</h3>
+    <input type="hidden" id="productId">
+    <div class="field">
+      <label>اسم المنتج</label>
+      <input type="text" id="fName" required>
+    </div>
+    <div class="field">
+      <label>الفئة</label>
+      <input type="text" id="fCategory" placeholder="مثال: سجاد فارسي" required>
+    </div>
+    <div class="field">
+      <label>السعر (جنيه)</label>
+      <input type="number" id="fPrice" min="0" required>
+    </div>
+    <div class="field">
+      <label>الوصف</label>
+      <textarea id="fDescription"></textarea>
+    </div>
+    <div class="field">
+      <label>المقاسات المتاحة <span style="font-weight:400;color:#999">(افصل بينهم بفاصلة، مثال: 2×3 متر, 3×4 متر)</span></label>
+      <input type="text" id="fSizes" placeholder="2×3 متر, 3×4 متر, 4×5 متر">
+    </div>
+    <div class="field">
+      <label>صورة المنتج</label>
+      <input type="file" id="fImage" accept="image/*">
+    </div>
+    <div class="field">
+      <label><input type="checkbox" id="fInStock" style="width:auto" checked> متوفر بالمخزون</label>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">حفظ</button>
+      <button type="button" class="btn btn-outline" id="cancelFormBtn">إلغاء</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
