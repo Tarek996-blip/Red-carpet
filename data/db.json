@@ -1,5 +1,17 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": "1783451745196",
+      "createdAt": "2026-07-07T19:15:45.196Z",
+      "name": "سجاد مطابخ",
+      "category": "سجاد كلاسيك",
+      "price": 1828,
+      "description": "",
+      "image": "/uploads/1783451745167-988202501.png",
+      "sizes": [],
+      "inStock": true
+    }
+  ],
   "gallery": [
     {
       "id": "1782996814291",
