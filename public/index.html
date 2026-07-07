@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> — سجاد ومفروشات فاخرةريد كاربت</title>
-<meta name="description" content="متجر دار السجاد لبيع أفخم أنواع السجاد الكلاسيكي والمودرن والموكيت بأسعار مناسبة.">
+<title>ريد كاربت — سجاد ومفروشات فاخرة</title>
+<meta name="description" content="ريد كاربت  لبيع أفخم أنواع السجاد الكلاسيكي والمودرن والموكيت بأسعار مناسبة.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
@@ -13,8 +13,8 @@
 
 <header class="site-header">
   <div class="container">
-    <div class="brand">ريد كاربت  </div>
-    <nav class="nav-links">
+    <div class="brand">ريد كاربت </div>
+    <nav class="nav-links" id="navLinks">
       <a href="#products">المنتجات</a>
       <a href="#sizes">المقاسات</a>
       <a href="#gallery">المعرض</a>
@@ -22,23 +22,24 @@
       <a href="#contact">تواصل معنا</a>
       <a href="/admin">لوحة التحكم</a>
     </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
     <div>
-       <h1>لكل <em>سجادة</em> حكاية<br>والحكاية تبدأ من <em>ريد كاربت</em></h1>
-      <p>نوفر أفخم أنواع السجاد الكلاسيكي والمودرن والموكيت، بخامات مختارة بعنايه فائقة  تناسب كل الأذواق والمساحات.</p>
+      <h1>لكل سجادة <em>حكاية</em><br>والحكاية تبدأ من <em>ريد كاربت</em></h1>
+      <p>نوفر أفخم أنواع السجاد الكلاسيكي والمودرن والموكيت، بخامات مختارة بعناية متقنة تناسب كل الأذواق والمساحات.</p>
       <div class="hero-actions">
         <a href="#sizes" class="btn btn-primary">اختر مقاسك</a>
         <a href="#contact" class="btn btn-outline">تواصل معنا</a>
       </div>
     </div>
     <div class="hero-art">
-      
-  <img src="/images/prand.png" alt="RED CARPET">
-
+      <img src="/images/prand.png" alt="Red Carpet">
     </div>
   </div>
 </section>
@@ -127,7 +128,7 @@
       </div>
       <div class="about-item">
         <h4>تشكيلة متنوعة</h4>
-        <p>من السجاد  الكلاسيكي إلى التصاميم المودرن والموكيت العملي.</p>
+        <p>من السجاد الكلاسيكي إلى التصاميم المودرن والموكيت العملي.</p>
       </div>
       <div class="about-item">
         <h4>خدمة شخصية</h4>
@@ -146,7 +147,7 @@
       </div>
     </div>
     <div class="contact-row">
-      <a class="btn btn-primary" href="https://wa.me/01064408070" target="_blank" rel="noopener">واتساب: 01064408070+</a>
+      <a class="btn btn-primary" href="https://wa.me/201064408070" target="_blank" rel="noopener">واتساب: 201064408070+</a>
       <a class="btn btn-outline" href="tel:+201064408070">اتصل بنا</a>
     </div>
   </div>
@@ -177,5 +178,15 @@
 </div>
 
 <script src="/js/main.js"></script>
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+</script>
 </body>
 </html>

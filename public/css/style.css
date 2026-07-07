@@ -75,25 +75,29 @@ button{font-family:inherit;cursor:pointer;}
 .btn-outline:hover{background:var(--color-ink);color:#fff;}
 
 .hero-art{
-    width:100%;
-    aspect-ratio:4/3;
-    overflow:hidden;
-    background:none;
-    box-shadow:none;
-    border:none;
-    border-radius:20px; /* غير الرقم حسب اللي يعجبك */
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+/* إلغاء الإطار الأبيض */
+.hero-art::after{
+    content: none;
 }
 
 .hero-art img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    border-radius:20px; /* نفس القيمة */
-}
-
-.hero-art::after{
-    content:none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لو عايز الصورة تملأ المكان بالكامل */
+    display: block;
+    border-radius: inherit;
 }
 
 /* ---------- Section heading ---------- */
@@ -211,10 +215,25 @@ td img{width:54px;height:54px;object-fit:cover;border-radius:6px;}
 
 @media(max-width:860px){
   .hero .container{grid-template-columns:1fr;}
-  .hero h1{font-size:38px;}
+  .hero h1{font-size:32px;}
+  .hero{padding:50px 0 40px;}
   .about-grid{grid-template-columns:1fr;}
   .modal{grid-template-columns:1fr;}
   .nav-links{display:none;}
+  .nav-links.open{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:76px;right:0;left:0;
+    background:var(--color-cream);
+    border-bottom:1px solid var(--color-line);
+    z-index:49;padding:12px 0;
+  }
+  .nav-links.open a{padding:12px 24px;font-size:16px;border-bottom:1px solid var(--color-line);}
+  .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--color-ink);border-radius:2px;transition:.2s;}
+  .site-header{position:relative;}
+}
+@media(min-width:861px){
+  .hamburger{display:none;}
 }
 
 /* ---------- سكشن المقاسات ---------- */
